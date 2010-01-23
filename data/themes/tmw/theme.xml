@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<theme>
+
+    <name>The Mana World</name>
+    <author>Andreas Habel</author>
+    <version>1.0.0</version>
+
+    <scriptfile>tmwtheme.php</scriptfile>
+    <stylesheet>default.css</stylesheet>
+    <classname>TMWTheme</classname>
+
+</theme>

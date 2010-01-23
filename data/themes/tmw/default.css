@@ -1,0 +1,419 @@
+/* /////////////////////////////////////////////////////////////////////////////
+basic elements
+///////////////////////////////////////////////////////////////////////////// */
+body {
+    background-color: #eeeeee;
+    padding: 0px 10px 10px 10px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+body, div, p, td, li, h1, h2, h3, h4 {
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+
+h1 {
+    background-image: url(images/layout/header.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 600px;
+    height: 210px;
+    margin: 0px;
+    top: 0px;
+    border: 0px solid green;
+    z-index:200;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(100,10,10);
+}
+
+a:visited {
+    color: rgb(60,0,0);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border-style: none;
+    height: 1px;
+    background-color: silver;
+    color: silver;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////
+named elements
+///////////////////////////////////////////////////////////////////////////// */
+
+#page {
+    min-width: 870px;
+    max-width: 1280px;    
+}
+
+#page h1 span {
+    display: none;    
+}
+
+#irc_info {
+    font-size: 8pt;
+    text-align: right;
+    height: 45px;
+    margin-top: 120px;
+    margin-right: 4px;
+}
+
+#main_topleft {
+    background-image: url(images/layout/main_topleft.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+}
+
+#main_rightrepeat {
+    margin-left: 98px;
+    background-image: url(images/layout/main_rightrepeat.png);
+    background-position: right;
+    background-repeat: repeat-y;
+
+    /* A one pixel padding to make IE render correctly
+    (the underscore is a hack to make only IE 5-6 see it) */
+    _padding-bottom: 1px;
+}
+
+#main_topright {
+    background-image: url(images/layout/main_topright.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+#main_bottomright {
+    background-image: url(images/layout/main_bottomright.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+#main {
+    padding: 0px 4px 0px 0px;
+}
+
+#main .main_title_topright {
+    background-image: url(images/layout/main_title_topright.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-color: #f2ebe7;
+    margin: 0px 0px 20px 1px;
+}
+
+#main .main_title_bottomright {
+    background-image: url(images/layout/main_title_bottomright.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+
+    /* A one pixel padding to make IE render correctly
+    (the underscore is a hack to make only IE 5-6 see it) */
+    _padding-bottom: 1px;
+}
+
+#main .main_title_topleft {
+    background-image: url(images/layout/main_title_topleft.png);
+    background-repeat: no-repeat;
+}
+
+#main h2 {
+    padding: 7px 7px 7px 107px;
+    margin: 0px;
+    color: #57565c;
+    font-size: 16pt;
+}
+
+#main h3 {
+    margin: 20px 0px 0px 0px;
+    font-weight: bold;
+    color: #3c3c3c;
+    border-bottom: 1px solid #9f9894;
+    font-size: 11pt;
+}
+
+#main label {
+    background-color: #ede2da;
+    margin: 5px;
+    padding: 5px 5px 5px 15px;
+    white-space: nowrap;
+    font-weight: bold;
+    text-align: right;
+    -moz-border-radius: 10px;
+}
+
+#main span.label {
+    background-color: #ede2da;
+    margin: 5px;
+    padding: 5px 5px 5px 15px;
+    white-space: nowrap;
+    font-weight: bold;
+    -moz-border-radius: 10px;
+}
+
+#main span.input {
+    padding: 4px 10px 4px 10px;
+    margin: 5px;
+    color: #57565c;
+    font-size: 11pt;
+    background-color: #ede2da;
+    border: 1px solid #9f9894;
+    -moz-border-radius: 10px;
+}
+
+#main input {
+    padding: 4px 10px 4px 10px;
+    margin: 5px;
+    color: #57565c;
+    font-size: 11pt;
+    background-color: #ede2da;
+    border: 1px solid #9f9894;
+    -moz-border-radius: 10px;
+}
+
+#main select {
+    padding: 4px 10px 4px 10px;
+    margin: 5px;
+    color: #57565c;
+    font-size: 11pt;
+    background-color: #ede2da;
+    border: 1px solid #9f9894;
+    -moz-border-radius: 10px;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////
+sidebar
+///////////////////////////////////////////////////////////////////////////// */
+
+#sidebar {
+    border: 0px dashed red;
+    float: right;
+    width: 170px;
+    padding-top: 2px;
+}
+
+#sidebar .section {
+    padding: 7px;
+}
+
+#sidebar .section h3 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 8pt;
+    margin: 0px 0px 50px 0px;
+    padding: 0px;
+    border-width: 0px;
+    color: #2f2e32;
+}
+
+#sidebar .section_topleft {
+    margin: 10px;
+    background-image: url(images/layout/section_topleft.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-color: #cba083;
+
+    /* A one pixel padding to make IE render correctly
+    (the underscore is a hack to make only IE 5-6 see it) */
+    _padding-bottom: 1px;
+}
+
+#sidebar .section_bottomleft {
+    background-image: url(images/layout/section_bottomleft.png);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+
+#sidebar .section_topright {
+    background-image: url(images/layout/section_topright.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+#sidebar .section_bottomright {
+    background-image: url(images/layout/section_bottomright.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+#sidebar .section ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#sidebar .section li {
+    list-style: none;
+    margin: 0px;
+}
+
+#sidebar .section li a {
+    display: block;
+    margin: 0px;
+    width: auto;
+    border: 1px solid #cba083;
+    text-decoration: none;
+    padding: 5px 5px 5px 20px;
+    margin: 0px;
+    color: black;
+    font-style: normal;
+    font-weight: bold;
+    color: #2f2e32;
+
+    /* Setting a background color fixes a strange hover issue with IE 7 */
+    background-color: #cba083;
+}
+
+#sidebar .section li a:hover {
+    border: 1px solid #78584c;
+    background-color: #dbbba4;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////
+style elements
+///////////////////////////////////////////////////////////////////////////// */
+
+img.online-led {
+    vertical-align: text-bottom;
+    padding: 0px 1px 0px 1px;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////
+contents
+///////////////////////////////////////////////////////////////////////////// */
+
+#contents_leftrepeat {
+    background-image: url(images/layout/contents_leftrepeat.png);
+    background-repeat: repeat-y;
+    background-color: #e1d6cf;
+    margin: 0px 170px 0px 0px;
+}
+
+#contents_topleft {
+    background-image: url(images/layout/contents_topleft.png);
+    background-repeat: no-repeat;
+}
+
+#contents_bottomleft {
+    background-image: url(images/layout/contents_bottomleft.png);
+    background-position: bottom left;
+    background-repeat: no-repeat;
+}
+
+#contents_rightrepeat {
+    background-image: url(images/layout/contents_rightrepeat.png);
+    background-position: right;
+    background-repeat: repeat-y;
+}
+
+#contents_topright {
+    background-image: url(images/layout/contents_topright.png);
+    background-position: top right;
+    background-repeat: no-repeat;
+}
+
+#contents_bottomright {
+    background-image: url(images/layout/contents_bottomright.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+#contents {
+    min-height: 400px;
+    padding: 12px 8px 250px 11px;
+    line-height: 150%;
+}
+
+#contents p, table, pre {
+    margin: 15px 40px 15px 30px;
+}
+
+#contents h4 {
+    margin-left: 30px;
+    margin-bottom: 0px;
+}
+
+#contents ul {
+    margin: 15px 40px 13px 20px;
+    padding: 0px 0px 0px 40px;
+    list-style-image:url(images/icon16.png);
+}
+
+#contents li {
+    padding-left: 5px;
+    margin-left: 0px;
+}
+
+#contents table {
+    border-top: 1px solid #9f9894;
+    border-bottom: 1px solid #9f9894;
+}
+
+#contents .datatable {
+    width: 95%;
+    padding: 4px 10px 4px 10px;
+    margin: 25px;
+    color: #57565c;
+    font-size: 11pt;
+    background-color: #ede2da;
+    border: 1px solid #9f9894;
+    -moz-border-radius: 10px;
+}
+
+#contents td {
+    border-bottom: 1px dotted #9f9894;
+    padding: 3px 10px 3px 3px;
+}
+
+#contents tr.last td {
+    border-width: 0px;
+}
+
+#footer {
+    font-size: 8pt;
+    text-align: right;
+    padding: 5px;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////
+javascript features
+///////////////////////////////////////////////////////////////////////////// */
+
+#contents div.autocomplete {
+  margin: 3px 3px 3px 3px;
+  padding: 7px 7px 7px 7px;
+  width:250px;
+  background-color: #ede2da;
+  border: 1px solid #9f9894;
+  position:absolute;
+  -moz-border-radius: 10px;
+}
+
+#contents div.autocomplete ul {
+  margin:0px;
+  padding:0px;
+  list-style-type:none;
+  list-style-image:none;
+}
+
+#contents div.autocomplete ul li.selected {
+  background-color:#dbbba4;
+}
+
+#contents div.autocomplete ul li {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  height:18px;
+  display:block;
+  list-style-type:none;
+  list-style-image:none;
+  cursor:pointer;
+  color:#57565c;
+}
+
+/* ////////////////////// end of file /////////////////////////////////////// */
