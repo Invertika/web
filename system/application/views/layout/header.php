@@ -12,11 +12,11 @@ echo "<?xml version=\"1.0\" encoding=\"ISO-8859-15\" ?>"; ?>
   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-15"/>
   <meta http-equiv="Content-Style-Type" content="text/css"/>
   <meta http-equiv="Content-Language" content="en"/>
-  
+
   <meta name="description" content="The Mana Server is a free MMORPG game for Linux, MacOS X and Windows"/>
   <meta name="keywords" content="The Mana Server, Mana, Mana Source, MMORPG, 2D, RPG, free, GPL"/>
   <meta name="author" content="The Mana Server Dev Team"/>
-  
+
   <link rel="shortcut icon" href="<?= base_url() ?>images/icon16.png" type="image/png"/>
   <link rel="icon" href="<?= base_url() ?>images/icon16.png" type="image/png"/>
 
@@ -36,7 +36,7 @@ echo "<?xml version=\"1.0\" encoding=\"ISO-8859-15\" ?>"; ?>
         echo $theme->afterLogo();
     ?>
 
-    
+
 
     <!-- start of navigation bar -->
     <?php
@@ -86,13 +86,13 @@ echo "<?xml version=\"1.0\" encoding=\"ISO-8859-15\" ?>"; ?>
         }
 
         // administration menu
-        if ( isset($user_menu) && $this->user->isAdmin() ) 
+        if ( isset($user_menu) && $this->user->isAdmin() )
         {
             $nb = new NavigationBox( 'navigation.mana.administration',  _("Admin Interface") );
             $nb->addNavigationItem( new NavigationItem('navigation.mana.administration.index',
                 _("Admin Interface"),  site_url("admin" )) );
             $nb->addNavigationItem( new NavigationItem('navigation.mana.administration.maintenance',
-                _("Maintenance"),  site_url("'admin/maintenance" )) );
+                _("Maintenance"),  site_url("admin/maintenance" )) );
             $navigation->addNavbox($nb, 90);
         }
 
@@ -118,5 +118,5 @@ echo "<?xml version=\"1.0\" encoding=\"ISO-8859-15\" ?>"; ?>
     <?= $theme->afterNavigationBar() ?>
     <?= $theme->beforeContent() ?>
     <?= $theme->title($page_title) ?>
-    
+
 
