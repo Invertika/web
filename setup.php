@@ -22,6 +22,8 @@
 
     define('FCPATH', __FILE__);
 
+    require_once 'ext/php-gettext/gettext.inc';
+
     function print_check( $msg, $result, $required="", $state="", $ann="" )
     {
         echo "
@@ -34,7 +36,7 @@
 
         if (strlen($ann) > 0)
         {
-	        echo "
+            echo "
             <tr>
                 <td colspan=\"3\" style=\"padding-left: 15px;\">$ann</td>
                 <td>&nbsp;</td>
@@ -189,7 +191,7 @@
         // checking wheter a custom logpath is set
         if (strlen($config['log_path']) > 0)
         {
-        	$logdir = $config['log_path'];
+            $logdir = $config['log_path'];
         }
         else
         {
@@ -234,7 +236,7 @@
         }
 
 
-        if ($config['base_url'] == "http://example.com/manaweb/")
+        if ($config['base_url'] == "http://manaweb.example.org")
         {
             print_check( "parameter <tt>base_url</tt>", "failed", "", "",
             	"This option is necessary to build correct internal links. Please set this parameter to the correct root of ".
@@ -258,24 +260,37 @@
         print_header("Checking database configuration and connection.");
         require_once('./system/application/config/database.php');
 
-        if ($db['default']['dbdriver'] != "pdo")
+        if ($db[$active_group]['dbdriver'] != "pdo")
         {
-            print_check( "Used database driver", "failed", $db['default']['dbdriver'], "pdo" );
+            print_check( "Used database driver", "failed", $db[$active_group]['dbdriver'], "pdo" );
+            return;
         }
         else
         {
-            print_check( "Used database driver", "ok", $db['default']['dbdriver'], "pdo" );
+            print_check( "Used database driver", "ok", $db[$active_group]['dbdriver'], "pdo" );
         }
 
-        if(substr($db['default']['database'], 0, 6) == "sqlite")
+        if(substr($db[$active_group]['database'], 0, 6) == "sqlite")
         {
             print_message("&nbsp; &nbsp; &nbsp; &nbsp; Found sqlite as database backend...");
         }
+        elseif(substr($db[$active_group]['database'], 0, 5) == "mysql")
+        {
+            print_message("&nbsp; &nbsp; &nbsp; &nbsp; Found mysql as database backend...");
+        }
         else
         {
-            print_check( "Used database backend", "failed", $db['default']['database'], "sqlite" );
+            print_check( "Used database backend", "failed", $db[$active_group]['database'], "(sqlite|mysql)..." );
+            return;
         }
 
+        if(file_exists('data/config_required'))
+        {
+            @unlink('data/config_required');
+        }
+
+        print_header( "Setup is complete." );
+        print_message( "<a href='" . $config['base_url']  . "' title='Continue'>Continue</a> to your installation." );
     }
 
 
@@ -297,7 +312,7 @@ echo "<?xml version=\"1.0\" encoding=\"ISO-8859-15\" ?>"; ?>
   <link rel="icon" href="./images/icon16.png" type="image/png"/>
 
   <style type="text/css">
-   @import url( "default.css");
+   @import url( "data/themes/default/default.css");
   </style>
   <style type="text/css">
     .ok {
@@ -319,6 +334,7 @@ echo "<?xml version=\"1.0\" encoding=\"ISO-8859-15\" ?>"; ?>
  </head>
  <body>
   <a name="top"></a>
+   <div id="logo"></div>
    <div id="page">
 
    <div id="irc_info">
